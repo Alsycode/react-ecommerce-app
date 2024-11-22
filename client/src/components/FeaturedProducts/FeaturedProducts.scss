@@ -1,26 +1,84 @@
 .featuredProducts {
-  margin: 100px 200px;
+  margin: 100px auto; /* Center the container with margin on top and bottom */
+  max-width: 1200px; /* Set a maximum width for large screens */
+  padding: 0 20px; /* Add some padding for responsiveness on smaller screens */
 
   .top {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align to the top */
     justify-content: space-between;
     margin-bottom: 50px;
+    flex-wrap: wrap; /* Ensure that the text can wrap on smaller screens */
 
     h1 {
       flex: 2;
+      font-size: 2rem; /* Adjust the font size */
       text-transform: capitalize;
+      margin: 0; /* Remove margin */
     }
 
-    p{
-      flex:3;
-      color:gray
+    p {
+      flex: 3;
+      color: gray;
+      font-size: 1rem;
+      margin: 0;
+      padding-left: 20px; /* Add some space between the text */
     }
   }
 
-  .bottom{
+  .bottom {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    flex-wrap: wrap; /* Allow cards to wrap when necessary */
+    justify-content: space-between; /* Evenly space out cards */
+    gap: 30px; /* Space between items in a row */
+    margin-bottom: 30px;
+    padding: 0 20px; /* Add padding for spacing on smaller screens */
+  }
+
+  /* For cards */
+  .card {
+    width: 300px; /* Card width */
+    flex: 0 0 300px; /* Flex with no growth and fixed basis */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between elements inside each card */
+  }
+
+  /* Ensure responsiveness */
+  @media (max-width: 768px) {
+    .top {
+      flex-direction: column;
+      align-items: flex-start; /* Stack h1 and p on smaller screens */
+      h1 {
+        margin-bottom: 15px; /* Space between h1 and p */
+      }
+      p {
+        padding-left: 0; /* Remove padding on smaller screens */
+      }
+    }
+
+    .bottom {
+      justify-content: center; /* Center items on smaller screens */
+      gap: 20px; /* Reduce gap between cards */
+    }
+
+    .card {
+      width: 100%; /* Card takes up full width on small screens */
+      max-width: 320px; /* Max width for cards */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .top {
+      text-align: center; /* Center the text on very small screens */
+    }
+
+    .bottom {
+      gap: 15px; /* Further reduce the gap between cards on mobile */
+    }
+
+    .card {
+      width: 100%; /* Ensure cards fill available space */
+    }
   }
 }

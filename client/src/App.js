@@ -6,7 +6,9 @@ import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
 import "./app.scss"
-
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
+import ProductListing from "./pages/Productlisting/ProductListing";
 const Layout = () => {
   return (
     <div className="app">
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
       },
+      {
+        path: "/contact",
+        element: <Contact/>
+      },
+      {
+        path: "/about",
+        element: <About/>
+      },
+      {path:"/productListing/:category",
+        element: <ProductListing/> },
     ],
   },
 ]);

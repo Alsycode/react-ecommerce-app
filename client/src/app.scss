@@ -1,7 +1,14 @@
-.app{
+.app {
+  background-color: #2a2a2a; /* A dark gray color */
+  color: white; /* Text color to contrast with the dark background */
+  
 
-  .link{
-    color: inherit;
+  .link {
+    color: #f1f1f1; /* Light gray color for links */
     text-decoration: none;
+
+    &:hover {
+      color: #2879fe; /* You can choose a highlight color for hover */
+    }
   }
 }

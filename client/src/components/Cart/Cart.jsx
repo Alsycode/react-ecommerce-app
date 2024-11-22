@@ -18,9 +18,9 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
-
+console.log("amount",products)
   const stripePromise = loadStripe(
-    "pk_test_eOTMlr8usx1ctymXqrik0ls700lQCsX2UB"
+    "pk_test_51OJBbySDRnCEx4FkyJhdyvA3QlrbK9f1jc8X8NgvV2VLT9BEj7tjBibREjVTFxtWyOyS3gRovszJohfOoak7sujp00ivPie8Hc"
   );
   const handlePayment = async () => {
     try {
@@ -41,7 +41,7 @@ const Cart = () => {
       <h1>Products in your cart</h1>
       {products?.map((item) => (
         <div className="item" key={item.id}>
-          <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt="" />
+          <img src={item?.img} alt="" />
           <div className="details">
             <h1>{item.title}</h1>
             <p>{item.desc?.substring(0, 100)}</p>
